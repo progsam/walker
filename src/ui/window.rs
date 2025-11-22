@@ -1234,6 +1234,10 @@ pub fn select_page_up() {
 }
 
 pub fn handle_grid_setting() {
+    if is_emergency() {
+        return;
+    }
+
     let p = if !get_provider().is_empty() {
         get_provider()
     } else {
